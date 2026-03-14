@@ -155,7 +155,7 @@
       display: block;
     }
 
-    .title span + span {
+    .title span+span {
       margin-top: 0.34em;
     }
 
@@ -446,17 +446,21 @@
 
     .rsvp-button[data-rsvp-choice="yes"].rsvp-button--selected,
     .rsvp-button[data-rsvp-choice="yes"].rsvp-button--selected:hover {
-      background: var(--palette-green); /* один из цветов палитры */
-      border-color: var(--ink); /* черная обводка */
-      color: var(--ink); 
+      background: var(--palette-green);
+      /* один из цветов палитры */
+      border-color: var(--ink);
+      /* черная обводка */
+      color: var(--ink);
     }
 
     /* Спец. стили для кнопки "Не смогу" в активном состоянии */
     .rsvp-button[data-rsvp-choice="no"].rsvp-button--selected,
     .rsvp-button[data-rsvp-choice="no"].rsvp-button--selected:hover {
-      background: var(--palette-pink); /* нежный розовый цвет для отказа */
-      border-color: var(--ink); /* черная обводка */
-      color: var(--ink); 
+      background: var(--palette-pink);
+      /* нежный розовый цвет для отказа */
+      border-color: var(--ink);
+      /* черная обводка */
+      color: var(--ink);
     }
 
     .rsvp-button:active {
@@ -563,6 +567,7 @@
       -webkit-appearance: none;
       margin: 0;
     }
+
     .rsvp-counter-input[type=number] {
       -moz-appearance: textfield;
       appearance: textfield;
@@ -791,7 +796,9 @@
 
     /* ── SUBMIT SPINNER ── */
     @keyframes btn-spin {
-      to { transform: rotate(360deg); }
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     .rsvp-btn-spinner {
@@ -1046,7 +1053,7 @@
       opacity: 0;
       transform: translateY(24px);
       transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-                  transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .reveal.is-visible {
@@ -1202,10 +1209,11 @@
             </summary>
             <div class="faq-body">
               <p>
-              Мы были бы признательны за денежный вклад в размере от 10.000 тенге. Эти средства помогут нам осуществить наши
-              свадебные мечты и сделать этот день ещё более особенным. Однако хотим подчеркнуть, что мы рады любому
-              вниманию и поддержке, независимо от суммы или подарка. Ваше присутствие и тёплые пожелания для нас уже
-              большой подарок!
+                Мы были бы признательны за денежный вклад в размере от 10.000 тенге. Эти средства помогут нам
+                осуществить наши
+                свадебные мечты и сделать этот день ещё более особенным. Однако хотим подчеркнуть, что мы рады любому
+                вниманию и поддержке, независимо от суммы или подарка. Ваше присутствие и тёплые пожелания для нас уже
+                большой подарок!
               </p>
             </div>
           </details>
@@ -1218,9 +1226,9 @@
             </summary>
             <div class="faq-body">
               <p>
-              Мы очень любим детей, однако этот вечер будет в формате торжества для взрослых. Просим заранее
-              позаботиться о присмотре за малышами — так вы сможете полностью расслабиться и насладиться праздником
-              вместе с нами.
+                Мы очень любим детей, однако этот вечер будет в формате торжества для взрослых. Просим заранее
+                позаботиться о присмотре за малышами — так вы сможете полностью расслабиться и насладиться праздником
+                вместе с нами.
               </p>
             </div>
           </details>
@@ -1233,8 +1241,26 @@
             </summary>
             <div class="faq-body">
               <p>
-              Нажмите одну из кнопок в разделе «Дайте нам знать», заполните короткую форму и отправьте ответ. Просим
-              ответить до 10 апреля, чтобы мы успели всё подготовить.
+                Нажмите одну из кнопок в разделе «Дайте нам знать», заполните короткую форму и отправьте ответ. Просим
+                ответить до 10 апреля, чтобы мы успели всё подготовить.
+              </p>
+            </div>
+          </details>
+        </li>
+        <li class="faq-list__item">
+          <details class="faq-item">
+            <summary class="faq-trigger">
+              <span class="faq-trigger__text">Как добраться до места?</span>
+              <span class="faq-trigger__icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-body">
+              <p>
+                Адрес: Сулуколь, 23.<br>
+                Такси — самый удобный вариант, закажите через любое приложение.<br>
+                На машине — откройте <a href="https://go.2gis.com/6zVsB" target="_blank" rel="noopener">маршрут в
+                  2ГИС</a>.<br>
+                Автобус №60 — доезжайте до остановки "Шлюз" (другое название "Трубы") и пройдите 5 минут пешком через
+                пешеходный мост.
               </p>
             </div>
           </details>
@@ -1269,7 +1295,8 @@
               <label for="guest-children">Дети (кол-во)</label>
               <div class="rsvp-counter">
                 <button type="button" class="rsvp-counter-btn" aria-label="Уменьшить" data-action="decrease">−</button>
-                <input class="rsvp-input rsvp-counter-input" type="number" id="guest-children" name="children" min="0" step="1" inputmode="numeric" placeholder="0" value="0" readonly>
+                <input class="rsvp-input rsvp-counter-input" type="number" id="guest-children" name="children" min="0"
+                  step="1" inputmode="numeric" placeholder="0" value="0" readonly>
                 <button type="button" class="rsvp-counter-btn" aria-label="Увеличить" data-action="increase">+</button>
               </div>
             </div>
