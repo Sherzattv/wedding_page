@@ -369,15 +369,44 @@
       border-color: #cde8d3;
     }
 
+    .timeline li:nth-child(6)::before {
+      border-color: #bde8ce;
+    }
+
+    .timeline__header {
+      display: flex;
+      align-items: baseline;
+      gap: 0.45em;
+      flex-wrap: wrap;
+      margin-bottom: 0.35rem;
+    }
+
+    .timeline__time {
+      font-family: var(--font-display);
+      font-size: clamp(1.12rem, 1.04rem + 0.5vw, 1.36rem);
+      font-weight: 700;
+      letter-spacing: 0.005em;
+      line-height: 1.25;
+      color: var(--ink-soft);
+      flex-shrink: 0;
+    }
+
+    .timeline__sep {
+      font-family: var(--font-sans);
+      font-size: 0.85em;
+      font-weight: 300;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+
     .timeline__title {
       font-family: var(--font-display);
       font-size: clamp(1.12rem, 1.04rem + 0.5vw, 1.36rem);
       font-weight: 700;
       text-transform: none;
       letter-spacing: 0.005em;
-      line-height: 1.35;
-      color: var(--ink-muted);
-      margin-bottom: var(--space-xs);
+      line-height: 1.25;
+      color: var(--ink-soft);
     }
 
     .timeline__desc {
@@ -1142,24 +1171,52 @@
       <h2 id="timeline-title" class="timeline-heading">Программа</h2>
       <ul class="timeline">
         <li>
-          <div class="timeline__title">Сбор гостей — 15:00</div>
-          <div class="timeline__desc">Ждём вас, чтобы вместе начать этот особенный день.</div>
+          <div class="timeline__header">
+            <span class="timeline__time">15:00</span>
+            <span class="timeline__sep">—</span>
+            <span class="timeline__title">Сбор гостей</span>
+          </div>
+          <div class="timeline__desc">Приходите, знакомьтесь, устраивайтесь.</div>
         </li>
         <li>
-          <div class="timeline__title">Церемония — 15:30</div>
-          <div class="timeline__desc">Торжественный момент, который мы так долго ждали.</div>
+          <div class="timeline__header">
+            <span class="timeline__time">15:30</span>
+            <span class="timeline__sep">—</span>
+            <span class="timeline__title">Церемония</span>
+          </div>
+          <div class="timeline__desc">Торжественные клятвы перед Богом и самыми близкими.</div>
         </li>
         <li>
-          <div class="timeline__title">Фуршет — 16:30</div>
-          <div class="timeline__desc">Лёгкие закуски, живое общение и хорошее настроение.</div>
+          <div class="timeline__header">
+            <span class="timeline__time">17:00</span>
+            <span class="timeline__sep">—</span>
+            <span class="timeline__title">Начало банкета</span>
+          </div>
+          <div class="timeline__desc">Праздничный стол, угощения и первые тосты за молодых.</div>
         </li>
         <li>
-          <div class="timeline__title">Праздник — 17:00</div>
-          <div class="timeline__desc">Поздравления, фото, игры и всё, что делает свадьбу незабываемой.</div>
+          <div class="timeline__header">
+            <span class="timeline__time">17:30</span>
+            <span class="timeline__sep">—</span>
+            <span class="timeline__title">Праздничная программа</span>
+          </div>
+          <div class="timeline__desc">Поздравления, песни и стихи — ваши слова для нас.</div>
         </li>
         <li>
-          <div class="timeline__title">Завершение — 19:00</div>
-          <div class="timeline__desc">Добрые пожелания и тёплое прощание.</div>
+          <div class="timeline__header">
+            <span class="timeline__time">19:30</span>
+            <span class="timeline__sep">—</span>
+            <span class="timeline__title">Завершение программы</span>
+          </div>
+          <div class="timeline__desc">Общее фото, тёплые объятия и добрые пожелания на прощание.</div>
+        </li>
+        <li>
+          <div class="timeline__header">
+            <span class="timeline__time">20:30</span>
+            <span class="timeline__sep">—</span>
+            <span class="timeline__title">Молодежный вечер</span>
+          </div>
+          <div class="timeline__desc">Продолжаем вечер в кругу молодёжи: общение и радость торжества</div>
         </li>
       </ul>
     </article>
@@ -1265,6 +1322,22 @@
             </div>
           </details>
         </li>
+        <li class="faq-list__item">
+          <details class="faq-item">
+            <summary class="faq-trigger">
+              <span class="faq-trigger__text">Можно ли выступить на свадьбе?</span>
+              <span class="faq-trigger__icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-body">
+              <p>
+                Конечно — и даже нужно! Наша свадьба в христианской традиции, и мы будем рады, если вы захотите поздравить нас
+                песней, стихом, молитвой или тёплыми словами от сердца. Это сделает праздничную программу живой и особенной.
+                Если планируете выступить — пожалуйста, укажите это в форме регистрации (поле «Хотите участвовать в программе»),
+                чтобы мы могли всё подготовить заранее.
+              </p>
+            </div>
+          </details>
+        </li>
       </ul>
     </section>
 
@@ -1299,6 +1372,11 @@
                   step="1" inputmode="numeric" placeholder="0" value="0" readonly>
                 <button type="button" class="rsvp-counter-btn" aria-label="Увеличить" data-action="increase">+</button>
               </div>
+            </div>
+            <div class="rsvp-field" id="program-field">
+              <label for="guest-program">Хотите участвовать в программе?</label>
+              <input class="rsvp-input" type="text" id="guest-program" name="program"
+                placeholder="Песня, стих, поздравление… или оставьте пустым">
             </div>
             <div class="rsvp-form-actions">
               <button class="rsvp-button" type="submit" id="rsvp-submit">Отправить</button>
@@ -1491,13 +1569,17 @@
       const childrenField = document.querySelector("#guest-children")?.closest(".rsvp-field");
       const submitBtn = document.querySelector("#rsvp-submit");
 
+      const programField = document.querySelector("#program-field");
+
       if (choice === "no") {
         if (cityField) cityField.style.display = "none";
         if (childrenField) childrenField.style.display = "none";
+        if (programField) programField.style.display = "none";
         if (submitBtn) submitBtn.textContent = "Отправить ответ";
       } else {
         if (cityField) cityField.style.display = "";
         if (childrenField) childrenField.style.display = "";
+        if (programField) programField.style.display = "";
         if (submitBtn) submitBtn.textContent = "Отправить";
       }
 
@@ -1550,6 +1632,7 @@
           name: String(formData.get("name") || "").trim(),
           city: String(formData.get("city") || "").trim(),
           children: childrenRaw === "" ? 0 : Number(childrenRaw),
+          program: String(formData.get("program") || "").trim(),
           submittedAt: new Date().toISOString(),
           source: window.location.href,
           userAgent: navigator.userAgent

@@ -55,6 +55,7 @@ function parsePayload_(e) {
     name: normalizeText_(parsed.name),
     city: normalizeText_(parsed.city),
     children: normalizeChildren_(parsed.children),
+    program: normalizeText_(parsed.program),
     submittedAt: normalizeText_(parsed.submittedAt),
     source: normalizeText_(parsed.source),
     userAgent: normalizeText_(parsed.userAgent)
@@ -90,6 +91,7 @@ function appendToSheet_(payload) {
     "name",
     "city",
     "children_count",
+    "program_participation",
     "submitted_at_client",
     "source_url",
     "user_agent"
@@ -116,6 +118,7 @@ function appendToSheet_(payload) {
     payload.name,
     payload.city,
     payload.children,
+    payload.program,
     payload.submittedAt,
     payload.source,
     payload.userAgent
@@ -149,6 +152,7 @@ function notifyTelegram_(payload) {
   if (isComing) {
     text += "\n🏙 <b>Город:</b> " + (payload.city || "Не указан");
     text += "\n👶 <b>Дети:</b> " + payload.children;
+    text += "\n🎤 <b>Участие в программе:</b> " + (payload.program || "—");
   }
 
   var url = "https://api.telegram.org/bot" + CONFIG.TELEGRAM_BOT_TOKEN + "/sendMessage";
